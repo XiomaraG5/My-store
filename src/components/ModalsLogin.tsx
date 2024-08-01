@@ -103,13 +103,13 @@ const ModalsLogin = (
                 
                     <div className="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
                         <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-                        {seller?` ${create?"Crear":"Ingresa"} como vendedor`:`${create?"Crear":"Ingresa"} como cliente`}
+                        {seller?` ${create?"Singup":"SingIn"} as Seller`:`${create?"Singup":"SingIn"} as client`}
                         </h3>
                         <button type="button" className="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="authentication-modal" onClick={close}>
                             <svg className="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
                                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
                             </svg>
-                            <span className="sr-only">Cerrar modal</span>
+                            <span className="sr-only">Close modal</span>
                         </button>
                     </div>
                     
@@ -118,7 +118,7 @@ const ModalsLogin = (
 
                             {create && (
                                 <div>
-                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Nombre</label>
+                                <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Name</label>
                                 <input type="text" name="name" id="name" value={data.name} onChange={(e) => setData({...data,name:e.target.value})} placeholder='Name'
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
                                     focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
@@ -126,7 +126,7 @@ const ModalsLogin = (
                             )}
 
                             <div>
-                                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Correo</label>
+                                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
 
                                 <input type="email" name="email" id="email" value={data.email} onChange={(e) => setData({...data,email:e.target.value})}
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 
@@ -135,13 +135,13 @@ const ModalsLogin = (
                             </div>
 
                             <div>
-                                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                                <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Password</label>
                                 <input type={showPass?"text":"password"}  name="password" id="password" placeholder="••••••••" value={data.password} onChange={(e) => setData({...data,password:e.target.value})}
                                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required />
 
                                 {create && 
                                 <>
-                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-3">Confirmar contraseña</label>
+                                    <label  className="block mb-2 text-sm font-medium text-gray-900 dark:text-white mt-3">Confirma Password</label>
                                     <input type={showPass?"text":"password"} name="password" id="password" placeholder="••••••••" value={data.repeatPassword} onChange={(e) => setData({...data,repeatPassword:e.target.value})}
                                         className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg
                                         focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 
@@ -165,14 +165,14 @@ const ModalsLogin = (
                                     </div>
                                     <label  className="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Seller</label>
                                 </div>
-                                <p className="text-sm text-blue-700 hover:underline dark:text-blue-500" onClick={()=>setShowPass(!showPass)}>{showPass?"Ocultar contraseña?":"Mostrar contraseña?"}</p>
+                                <p className="text-sm text-blue-700 hover:underline dark:text-blue-500" onClick={()=>setShowPass(!showPass)}>{showPass?"Hide Password?":"Show Password?"}</p>
                             </div>
 
                             {!create &&  <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                No te has registrado? <span className="text-blue-700 hover:underline dark:text-blue-500 ps-2" onClick={()=>setCreate(true)}>Crear cuenta</span>           
+                              Have you not registered? <span className="text-blue-700 hover:underline dark:text-blue-500 ps-2" onClick={()=>setCreate(true)}>SingUp</span>           
                             </div> }
                             {create &&  <div className="text-sm font-medium text-gray-500 dark:text-gray-300">
-                                Ya tienes cuenta? <span className="text-blue-700 hover:underline dark:text-blue-500 ps-2" onClick={()=>setCreate(false)}>Ingresar</span>           
+                              Already have an account? <span className="text-blue-700 hover:underline dark:text-blue-500 ps-2" onClick={()=>setCreate(false)}>SingIn</span>           
                             </div> }
                         </form>
                     </div>

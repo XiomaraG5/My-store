@@ -42,26 +42,25 @@ return(
   </div>
   <div className="mx-auto max-w-7xl px-6 lg:px-8">
     <div className="mx-auto max-w-2xl lg:mx-0">
-      <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Productos de calidad</h2>
+      <h2 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Quality Products</h2>
       <p className="mt-6 text-lg leading-8 text-gray-300">
-        Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-        fugiat veniam occaecat fugiat aliqua.
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque rutrum, arcu in lacinia convallis, urna lectus dignissim felis, eget pharetra neque nibh nec diam.
       </p>
     </div>
     <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
-      <p className="text-xl font-bold tracking-tight text-white sm:text-2xl mb-7" >Ingresar como:</p>
+      <p className="text-xl font-bold tracking-tight text-white sm:text-2xl mb-7" >Singin as:</p>
      
 
     <button type="button" className="text-white bg-gradient-to-br from-violet-600 to-blue-900 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none
      focus:ring-violet-800 dark:focus:ring-violet-900 font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 mb-2 hover:-translate-y-1 hover:scale-110  duration-300"
      onClick={()=>{setSeller(false);setShow(true)}}>
-      Cliente
+      Client
       </button>
 
       <button type="button" className="text-white  hover:bg-gradient-to-bl focus:ring-none transition ease-in-out delay-150 focus:outline-none 
        font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 mb-2 hover:-translate-y-1 hover:scale-110  duration-300"
        onClick={()=>{setSeller(true);setShow(true)}}>
-      Vendedor
+      Seller
       </button>
     </div>
   </div>
