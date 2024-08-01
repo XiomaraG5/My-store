@@ -1,0 +1,50 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATA_BASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id       Int      @id @default(autoincrement())
+  email    String   @unique
+  name     String?
+  role     String
+  password String
+  salesAsUser  Sale[] @relation("UserSales")
+  salesAsSeller Sale[] @relation("SellerSales")
+  sessions Session[]
+}
+
+model Product {
+  id          Int      @id @default(autoincrement())
+  name        String
+  category    String
+  quantity    Int
+  imageUrl    String
+  price       Float
+  description String
+  sales       Sale[]
+}
+
+model Sale {
+  id          Int      @id @default(autoincrement())
+  quantity    Int
+  productId   Int
+  userId      Int
+  sellerId    Int
+  product     Product  @relation(fields: [productId], references: [id])
+  user        User     @relation(name: "UserSales", fields: [userId], references: [id])
+  seller      User     @relation(name: "SellerSales", fields: [sellerId], references: [id])
+}
+
+model Session {
+  id           Int      @id @default(autoincrement())
+  sessionToken String   @unique
+  userId       Int
+  user         User     @relation(fields: [userId], references: [id])
+  createdAt    DateTime @default(now())
+  expires      DateTime
+}
