@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import PurchaseModal from './PurchaseModal'; // Asegúrate de que la ruta es correcta
+import PurchaseModal from './PurchaseModal'; 
 
 interface Product {
   id: number;
@@ -24,9 +24,7 @@ export default function ProductList({ onEdit, user }: { onEdit: (product: Produc
   useEffect(() => {
     fetchProducts();
   }, []);
-console.log('====================================');
-console.log(products);
-console.log('====================================');
+  
   const fetchProducts = async () => {
     try {
       const response = await fetch('/api/products');
